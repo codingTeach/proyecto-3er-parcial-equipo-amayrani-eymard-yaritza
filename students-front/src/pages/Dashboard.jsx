@@ -37,8 +37,8 @@ const Dashboard = () => {
     const fetchData = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('https://backend-students.onrender.com/students?skip=0&limit=10', {
-          headers: { Authorization: Bearer ${token} },
+        const response = await axios.get('https://backend-students.onrender.com/students?skip=0&limit=90', {
+          headers: { Authorization: `Bearer ${token}` },
         });
         setData(response.data);
       } catch (error) {
@@ -118,7 +118,7 @@ const Dashboard = () => {
             return 'rgba(200, 200, 200, 0.5)'; 
           }
           const alpha = Math.min(1, entry / 2000); 
-          return rgba(255, 99, 132, ${alpha});
+          return rgba(255, 99, 132, `${alpha}`);
         },
         borderWidth: 1,
         width: ({ chart }) => chart.scales.x.width / 8,
@@ -150,7 +150,7 @@ const Dashboard = () => {
     plugins: {
       tooltip: {
         callbacks: {
-          label: (tooltipItem) => Valor: ${tooltipItem.raw.v},
+          label: (tooltipItem) => `Valor: ${tooltipItem.raw.v}`,
         },
       },
     },
@@ -162,7 +162,7 @@ const Dashboard = () => {
       <div className="w-64 bg-blue-600 text-white p-6">
         <h1 className="text-2xl font-bold mb-6">Dashboard</h1>
         <nav className="space-y-4">
-          <a href="http://localhost:5173" className="block py-2 px-4 rounded hover:bg-blue-500">
+          <a href="https://proyecto-3er-parcial-equipo-amayrani.onrender.com" className="block py-2 px-4 rounded hover:bg-blue-500">
             Inicio
           </a>
         </nav>
