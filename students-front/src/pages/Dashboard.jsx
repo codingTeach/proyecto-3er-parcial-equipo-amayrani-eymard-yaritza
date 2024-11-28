@@ -118,7 +118,7 @@ const Dashboard = () => {
             return 'rgba(200, 200, 200, 0.5)'; 
           }
           const alpha = Math.min(1, entry / 2000); 
-          return rgba(255, 99, 132, `${alpha}`);
+          return `rgba(255, 99, 132, ${alpha})`;
         },
         borderWidth: 1,
         width: ({ chart }) => chart.scales.x.width / 8,
