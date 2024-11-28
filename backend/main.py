@@ -12,6 +12,7 @@ origins = [
     "http://localhost:8080",
     "http://example.com",
     "http://example.com:8080",
+    "https://proyecto-3er-parcial-equipo-amayrani.onrender.com",
 ]
 
 methods = ["GET", "POST"]
