@@ -9,7 +9,7 @@ router = APIRouter()
              response_model=Token,
              description="Get a list of all students")
 async def login(request: LoginRequest):
-    if request.username != "admin" or request.password != "admin":
+    if request.username != "UsuarioPrueba" or request.password != "admin":
         raise HTTPException(status_code=401, detail="Invalid credentials")
     
     access_token = create_access_token({"sub": request.username})
