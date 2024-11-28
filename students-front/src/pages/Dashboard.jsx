@@ -37,7 +37,7 @@ const Dashboard = () => {
     const fetchData = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:8000/students?skip=0&limit=80', {
+        const response = await axios.get('https://backend-students.onrender.com/students?skip=0&limit=10', {
           headers: { Authorization: Bearer ${token} },
         });
         setData(response.data);
